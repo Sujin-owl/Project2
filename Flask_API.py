@@ -37,15 +37,23 @@ def welcome():
     return (
         f"Available Routes:<br/>"
         f"/api/v1.0/drug_data<br/>"
+        f"/api/v1.0/unemployment<br/>"
 )
 
 @app.route("/api/v1.0/drug_data")
 def drug_data():
     """Return all database data on drug usage by state and year"""
-    # Query all consumption data by state
     Drugs = engine.execute("SELECT * FROM drug").fetchall()
     
     return jsonify({'Drugs': [dict(row) for row in Drugs]})
+
+@app.route("/api/v1.0/unemployment")
+def unemployment():
+    """Return all database data on unemployment by state and year"""
+    Unemployment = engine.execute("SELECT * FROM unemployment").fetchall()
+    
+    return jsonify({'Unemployment': [dict(row) for row in Unemployment]})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
