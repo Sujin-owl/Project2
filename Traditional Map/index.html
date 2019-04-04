@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Over Doses and Unemployment Analysis</title>
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+
+
+    <!--D3 cdn-->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+      <!-- Leaflet-Choropleth JavaScript -->
+      <script type="text/javascript" src="static/js/choropleth.js"></script>
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+  </head>
+
+  <body>
+      <div class="wrapper">
+          <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="index.html">Drugs & Unemployment
+                  </a>
+                </div>
+              </div>
+          </nav>
+          <div class="hero text-center">
+              <h1>The Drug Epidemic</h1>
+              <p>Is Unemployment Causing the Drug Overdoses or Vice Versa</p>
+          </div>
+      </div>
+
+      <!-- The div where we will inject our maps -->
+      <div id="map"></div>
+      <div id="graph"></div>
+      <div id="info-box"></div>
+
+      <div class="container">
+              <nav class="navbar">
+                  <ul>
+                  <li>
+                      <a href="#">Home</a>
+                  </li>
+                  <li>
+                      <a href="#">About</a>
+                  </li>
+                  <li>
+                      <a href="#">Articles</a>
+                  </li>
+                  <li>
+                      <a href="#">More Information</a>
+                  </li>
+                  </ul>
+              </nav>
+              <header class="header">
+                  <h1>Welcome</h1>
+              </header>
+              <main>
+                  <section class="posts">
+                  <article class="post">
+                      <h3>Ut nulla exercitation ad eu et amet nisi dolor.</h3>
+                      <p>Nisi quis consectetur excepteur cillum dolor minim. Reprehenderit do qui veniam dolor in ea cupidatat eiusmod ad adipisicing nulla officia dolor sit. Anim fugiat eu enim in ex est deserunt laborum commodo incididunt consectetur consectetur.
+                      Ullamco nulla nulla cillum elit reprehenderit officia magna excepteur. Fugiat occaecat veniam eu amet veniam tempor fugiat magna exercitation amet veniam mollit pariatur. Minim adipisicing cupidatat est do est id ex reprehenderit quis enim
+                      elit consectetur sint.
+                      </p>
+                  </article>
+                  <article class="post">
+                      <h3>Ut nulla exercitation ad eu et amet nisi dolor.</h3>
+                      <p>Nisi quis consectetur excepteur cillum dolor minim. Reprehenderit do qui veniam dolor in ea cupidatat eiusmod ad adipisicing nulla officia dolor sit. Anim fugiat eu enim in ex est deserunt laborum commodo incididunt consectetur consectetur.
+                      Ullamco nulla nulla cillum elit reprehenderit officia magna excepteur. Fugiat occaecat veniam eu amet veniam tempor fugiat magna exercitation amet veniam mollit pariatur. Minim adipisicing cupidatat est do est id ex reprehenderit quis enim
+                      elit consectetur sint.
+                      </p>
+                  </article>
+                  </section>
+              </main>
+
+        </div>
+      </div>
+  </body>
+  <body>
+    <!-- API key -->
+    <script type="text/javascript" src="static/js/config.js"></script>
+    <!-- Our JS -->
+    <script type="text/javascript" src="static/js/logic.js"></script>
+  </body>
+</html>
