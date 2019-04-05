@@ -3,6 +3,7 @@
   font-family: Ubuntu, sans-serif;
 }
 
+/* Basic formating of the HTML page. */
 html,
 body {
   height: 100%;
@@ -18,104 +19,98 @@ body {
   overflow: auto;
 }
 
-/* The footer is positioned at the bottom of the page */
-.footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  min-height: 100px;
-  background: #4e5d6c;
-}
 
-/* The code styles the text at the bottom of the footer */
-.footer > .bottom {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 5px;
-  background: #1b3146;
-}
 
 .navbar {
   padding: 5px;
   margin: 0;
 }
 
-/* This CSS styles the ufo icon in the navbar */
-.nav-ufo {
-  position: absolute;
-  bottom: 5px;
-  left: 150px;
-  width: 35px;
-  color: white;
-}
 
-/* Adding styles to the aside and filter form */
-.ufo-form {
-  margin-top: 50px;
-}
-
-.filters .panel-body {
-  padding: 0;
-}
-
-.filters {
-  margin-top: 10px;
-}
-
-select {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  color: #8e979f;
-  outline: none;
-}
-
-#table-area th {
-  text-align: center;
-}
-
-#table-area th:first-child,
-#table-area th:nth-child(2),
-#table-area th:nth-child(6) {
-  min-width: 70px;
-}
-
-.loader {
-  margin-top: 50px;
-}
-
-.margin-top-50 {
-  margin-top: 50px;
-}
-
-/* The styles for the parallax */
+/* The styles for picture behind the title and subtitle.*/
 .hero {
   position: relative;
-  height: 550px;
-  padding: 20px;
+  padding: 6px 8px;
+  height: 400px;
+  padding: 0px;
   margin: 0;
   background: black;
-  background-image: url("../images/nasa.jpg");
+  background-image: url("../images/unemployment_Claims.jpg");
   background-attachment: fixed;
-  background-position: bottom center;
-  background-size: cover;
+  background-position: top center;
+  background-size: behind;
 }
 
+/* Yellow title flying in with blue background for readability */
 .hero h1 {
+  padding: 6px 8px;
   margin-top: 200px;
   font-size: 0.1rem;
   animation: title 1.2s forwards linear;
+  text-align: center;
+  background: blue;
+  color: yellow;
 }
 
+
+/* Yellow subtitle with a blue background for readability */
 .hero p {
   font-size: 2rem;
   opacity: 0;
   animation: subtitle 1.2s forwards linear;
   animation-delay: 1.2s;
+  text-align: center;
+  background: blue;
+  color: yellow;
 }
+
+/* This creates the outline of the states */
+path:hover, circle:hover {
+  stroke: #002868 !important;
+  stroke-width:2px;
+  stroke-linejoin: round;
+  fill: #002868 !important;
+  cursor: pointer;
+}
+
+
+
+#map {
+  display: block;
+  height: 70%;
+  width: 80%;
+  position: absolute;
+}
+
+#path67 {
+  fill: none !important;
+  stroke: #A9A9A9 !important;
+  cursor: default;
+}
+
+#info-box {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #ffffff;
+  border: 2px solid #BF0A30;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: arial;
+}
+
+.leaflet-popup-content {
+  text-align: center;
+}
+
+#graph,
+body,
+html {
+  height: 80%;
+}
+
 
 /* input placeholder color changes */
 .form-control::-webkit-input-placeholder {
@@ -240,4 +235,85 @@ select {
   to {
     opacity: 1;
   }
+}
+
+.info {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+.info h4 {
+  margin: 0 0 5px;
+  color: #777;
+}
+
+.legend {
+  line-height: 18px;
+  color: #555;
+}
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+/* The footer is positioned at the bottom of the page */
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 100px;
+  background: #4e5d6c;
+}
+
+/* The code styles the text at the bottom of the footer */
+.footer > .bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  background: #1b3146;
+}
+
+
+
+.filters .panel-body {
+  padding: 0;
+}
+
+.filters {
+  margin-top: 10px;
+}
+
+select {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  color: #8e979f;
+  outline: none;
+}
+
+#table-area th {
+  text-align: center;
+}
+
+#table-area th:first-child,
+#table-area th:nth-child(2),
+#table-area th:nth-child(6) {
+  min-width: 70px;
+}
+
+.loader {
+  margin-top: 50px;
+}
+
+.margin-top-50 {
+  margin-top: 50px;
 }
