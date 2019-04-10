@@ -1,9 +1,10 @@
 // call our own API route
 
-var url = '/api/v1.0/drug_data';
+var url = '/api/v1.0/combined';
 d3.json(url).then(function (data) {
-  console.log(data.Drugs[0])
+  console.log(data)
 });
+<<<<<<< HEAD
 
 var url = '/api/v1.0/unemployment';
 
@@ -43,3 +44,5 @@ makeResponsive();
 // Event listener for window resize.
 // When the browser window is resized, makeResponsive() is called.
 d3.select(window).on("resize", makeResponsive);
+=======
+>>>>>>> ffc65865a287d2918b9995a0e5d69f7d8494eba2
