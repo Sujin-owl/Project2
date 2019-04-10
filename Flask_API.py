@@ -81,6 +81,57 @@ def combined():
     
     return jsonify(combined_dict)
 
+@app.route("/api/v1.0/states")
+def states():
+    """Return all state abbreviations"""
+    Combined = engine.execute("SELECT * FROM combined").fetchall()
+    test_df = pd.DataFrame(Combined)
+    test_df = test_df.reset_index()
+    test_df = test_df.rename(columns={0: 'state',
+                                1: "month_year",
+                                2: "cocaine",
+                                3: "heroin",
+                                4: "methadone",
+                                5: "number_of_deaths",
+                                6: "number_drug_overdose_death",
+                                7: "opioids",
+                                8: "percent_drugs_specified",
+                                9: "psychostimulants",
+                                10: "unemployment_data"})
+    
+    # print(test_df.state.unique())
+
+    return jsonify(list(test_df.state.unique()))
+
+@app.route("/api/v1.0/statedata/<state>")
+def statedata(state):
+    """Return all state abbreviations"""
+    Combined = engine.execute("SELECT * FROM combined").fetchall()
+    test_df = pd.DataFrame(Combined)
+    test_df = test_df.reset_index()
+    test_df = test_df.rename(columns={0: 'state',
+                                1: "month_year",
+                                2: "cocaine",
+                                3: "heroin",
+                                4: "methadone",
+                                5: "number_of_deaths",
+                                6: "number_drug_overdose_death",
+                                7: "opioids",
+                                8: "percent_drugs_specified",
+                                9: "psychostimulants",
+                                10: "unemployment_data"})
+    
+    # print(test_df.state.unique())
+    datagrouped = test_df.groupby(['state', 'month_year'])
+    group_df = pd.DataFrame()
+    columns = ['cocaine', 'heroin', 'methadone', 'number_of_deaths', 'number_drug_overdose_death', 'opioids', 'percent_drugs_specified', 'psychostimulants', "unemployment_data"]
+    for column in columns:
+        group_df[f"{column}"] = datagrouped[f"{column}"].sum()
+
+    combined_dict = group_df.groupby(level=0).apply(lambda df: df.xs(df.name).to_dict()).to_dict()
+    # print(combined_dict)
+    
+    return jsonify(combined_dict[state])
 
 if __name__ == '__main__':
     app.run(debug=True)
