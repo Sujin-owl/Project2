@@ -28,32 +28,38 @@ function buildCharts(state) {
   var drug = [];
   var unemploy = [];
   var time = [];
+  var cocaine = [];
   // @TODO: Use `d3.json` to fetch the sample data for the plots
   // var url = "/samples/<sample>"
   d3.json(`/api/v1.0/statedata/${state}`).then(function(response){
     var data = response;
     var drug_values = data.number_drug_overdose_death;
     var unemploy_values = data.unemployment_data;
+    var cocaine_values = data.cocaine;
     console.log(drug_values);
     drug = Object.values(drug_values);
     console.log(drug);
     unemploy = Object.values(unemploy_values);
     time = Object.keys(unemploy_values);
+    cocaine= Object.values(cocaine_values);
 
     // @TODO: Build a Bubble Chart using the state data
   var trace1 = {
     x: drug,
     y: unemploy,
-    type:"scatter",
     mode:"markers",
     marker:{
-      color:unemploy,
-      size:unemploy
+      color:"lightblue",
+      size: drug,
+    //setting 'sizeref' to lower than 1 decreases the rendered size
+    sizeref: 4,
+      opacity: 0.8
     },
     text:time
   };
   var data1 = [trace1]
   var layout = {
+    title: 'The relationship between drug dose death and unemployment rate',
     xaxis: {title:"Number of Drug Overdose Death"},
     yaxis:{title:"Unemployment Rate"}
   };
