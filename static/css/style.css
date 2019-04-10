@@ -169,7 +169,7 @@ body {
   font-size: 0.1rem;
   animation: title 1.2s forwards linear;
   text-align: center;
-  color: lightblue;
+  color: rgb(129, 69, 69);
 }
 
 
@@ -180,7 +180,7 @@ body {
   animation: subtitle 1.2s forwards linear;
   animation-delay: 1.2s;
   text-align: center;
-  color:lightblue;
+  color:rgb(112, 47, 47);
 }
 
 /* This creates the outline of the states */
