@@ -31,7 +31,7 @@ session = Session(engine)
 # Flask Setup
 #################################################
 app = Flask(__name__)
-
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgres://ifjrpzltcromok:5a705c7cda92b230eec77291c74460b331214db52a766c85c39679453fc18483@ec2-23-23-173-30.compute-1.amazonaws.com:5432/dd5pdo3uu7mp87') 
 
 @app.route("/")
 def index():
