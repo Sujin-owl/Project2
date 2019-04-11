@@ -54,8 +54,9 @@ body {
   background-position: bottom center;
   background-size: cover;
 }
-.container-fluid {
-  background: lightgray
+.container {
+  background: white;
+  padding: 10px
 }
 img{vertical-align: center;
 align-content: center}
@@ -165,11 +166,11 @@ body {
 /* Yellow title flying in with blue background for readability */
 .hero h1 {
   padding: 6px 8px;
-  margin-top: 200px;
+  margin-top: 30px;
   font-size: 0.1rem;
   animation: title 1.2s forwards linear;
-  text-align: center;
-  color: lightblue;
+  text-align: top;
+  color: rgb(129, 69, 69);
 }
 
 
@@ -180,7 +181,7 @@ body {
   animation: subtitle 1.2s forwards linear;
   animation-delay: 1.2s;
   text-align: center;
-  color:lightblue;
+  color:rgb(112, 47, 47);
 }
 
 /* This creates the outline of the states */

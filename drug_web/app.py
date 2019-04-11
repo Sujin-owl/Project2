@@ -37,6 +37,11 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route("/Drug_data.html")
+def drugs():
+
+    return render_template("Drug_data.html")
+
 
 @app.route("/api/v1.0/drug_data")
 def drug_data():
